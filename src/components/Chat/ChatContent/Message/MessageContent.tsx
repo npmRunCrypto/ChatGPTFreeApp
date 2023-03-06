@@ -7,7 +7,7 @@ import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 import useStore from '@store/store';
 // @ts-ignore
-import { useSpeechRecognition } from "react-speech-kit";
+import { useSpeechSynthesis, useSpeechRecognition } from "react-speech-kit";
 
 import CopyIcon from '@icon/CopyIcon';
 import EditIcon2 from '@icon/EditIcon2';
@@ -79,6 +79,7 @@ const ContentView = React.memo(
     const lastMessageIndex = useStore((state) =>
       state.chats ? state.chats[state.currentChatIndex].messages.length - 1 : 0
     );
+    const { speak } = useSpeechSynthesis();
 
     const handleDelete = () => {
       const updatedChats: ChatInterface[] = JSON.parse(
@@ -112,6 +113,7 @@ const ContentView = React.memo(
       updatedMessages.splice(updatedMessages.length - 1, 1);
       setChats(updatedChats);
       handleSubmit();
+      speak({ text: updatedMessages[0].content })
     };
 
     return (
