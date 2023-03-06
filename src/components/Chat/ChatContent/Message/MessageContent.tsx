@@ -22,6 +22,7 @@ import useSubmit from '@hooks/useSubmit';
 import { ChatInterface } from '@type/chat';
 
 import PopupModal from '@components/PopupModal';
+import RecordIcon from '@icon/RecordIcon';
 
 const MessageContent = ({
   role,
@@ -113,7 +114,7 @@ const ContentView = React.memo(
       updatedMessages.splice(updatedMessages.length - 1, 1);
       setChats(updatedChats);
       handleSubmit();
-      speak({ text: content })
+
     };
 
     return (
@@ -202,6 +203,9 @@ const ContentView = React.memo(
 
               <EditButton setIsEdit={setIsEdit} />
               <DeleteButton setIsDelete={setIsDelete} />
+              <button onClick={()=> speak({ text: content })}>
+                <RecordIcon/>
+              </button>
             </>
           )}
           {isDelete && (
