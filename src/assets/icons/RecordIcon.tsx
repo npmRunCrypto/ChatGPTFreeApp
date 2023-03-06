@@ -1,5 +1,5 @@
 
 const RecordIcon = () => (
-    <svg height="60" width="60" viewBox="0 0 24 24" fill="blue"><path d="M8 10v5a4 4 0 0 0 8 0v-5h2v5a6 6 0 0 1-12 0v-5H8zM12 2a4 4 0 0 1 4 4v5h-8V6a4 4 0 0 1 4-4z" /></svg>);
+    <svg width="50" height="50" viewBox="0 0 24 24" fill="white"><path d="M12 3c-3.86 0-7 3.14-7 7v4c0 3.86 3.14 7 7 7s7-3.14 7-7v-4c0-3.86-3.14-7-7-7zm5 11c0 2.76-2.24 5-5 5s-5-2.24-5-5v-4c0-2.76 2.24-5 5-5s5 2.24 5 5v4z" /></svg>);
 
 export default RecordIcon;
