@@ -111,9 +111,9 @@ const ContentView = React.memo(
       );
       const updatedMessages = updatedChats[currentChatIndex].messages;
       updatedMessages.splice(updatedMessages.length - 1, 1);
+      speak({ text: updatedMessages[0].content })
       setChats(updatedChats);
       handleSubmit();
-      speak({ text: updatedMessages[0].content })
     };
 
     return (
