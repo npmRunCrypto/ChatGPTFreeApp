@@ -380,6 +380,7 @@ const EditView = ({
     }
   });
 
+  const toggle = listen('en-US');
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -409,7 +410,7 @@ const EditView = ({
         ></textarea>
       </div>
       <div className='text-center mt-2 flex justify-center'>
-        <button title='listen' onClick={listen('en-US')} className='btn relative mr-2 btn-primary'>
+        <button title='listen' onClick={toggle} className='btn relative mr-2 btn-primary'>
           Listen
         </button>
         <button title='stop' onClick={stop} className='btn relative mr-2 btn-primary'>
