@@ -3,6 +3,9 @@ import useStore from '@store/store';
 import { ChatInterface } from '@type/chat';
 import { getChatCompletionStream as getChatCompletionStreamFree } from '@api/freeApi';
 import { getChatCompletionStream as getChatCompletionStreamCustom } from '@api/customApi';
+// @ts-ignore
+import { useSpeechSynthesis } from 'react-speech-kit';
+
 import { parseEventSource } from '@api/helper';
 
 const useSubmit = () => {
@@ -20,6 +23,7 @@ const useSubmit = () => {
     if (generating || !chats) return;
 
     const updatedChats: ChatInterface[] = JSON.parse(JSON.stringify(chats));
+    const { speak } = useSpeechSynthesis();
 
     updatedChats[currentChatIndex].messages.push({
       role: 'assistant',
@@ -68,6 +72,7 @@ const useSubmit = () => {
             const updatedMessages = updatedChats[currentChatIndex].messages;
             updatedMessages[updatedMessages.length - 1].content += resultString;
             setChats(updatedChats);
+            speak({ text: resultString })
           }
         }
       }
