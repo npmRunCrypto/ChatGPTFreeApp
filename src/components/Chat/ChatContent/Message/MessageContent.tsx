@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 import useStore from '@store/store';
+// @ts-ignore
 import { useSpeechRecognition } from "react-speech-kit";
 
 import CopyIcon from '@icon/CopyIcon';
