@@ -72,7 +72,7 @@ const useSubmit = () => {
             const updatedMessages = updatedChats[currentChatIndex].messages;
             updatedMessages[updatedMessages.length - 1].content += resultString;
             setChats(updatedChats);
-            speak({ text: resultString })
+            // speak({ text: resultString })
           }
         }
       }
