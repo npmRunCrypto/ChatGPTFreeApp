@@ -203,8 +203,8 @@ const ContentView = React.memo(
 
               <EditButton setIsEdit={setIsEdit} />
               <DeleteButton setIsDelete={setIsDelete} />
-              <button onClick={()=> speak({ text: content })} className='btn relative mr-2 btn-primary'>
-                Speak
+              <button onClick={()=> speak({ text: content })}>
+                <RecordIcon/>
               </button>
             </>
           )}
