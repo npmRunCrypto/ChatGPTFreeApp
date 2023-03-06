@@ -22,8 +22,6 @@ import useSubmit from '@hooks/useSubmit';
 import { ChatInterface } from '@type/chat';
 
 import PopupModal from '@components/PopupModal';
-import RecordIcon from '@icon/RecordIcon';
-import StopIcon from '@icon/StopIcon';
 
 const MessageContent = ({
   role,
@@ -405,11 +403,11 @@ const EditView = ({
         ></textarea>
       </div>
       <div className='text-center mt-2 flex justify-center'>
-        <button title='listen' onClick={listen} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
-          <RecordIcon />
+        <button title='listen' onClick={listen} className='btn relative mr-2 btn-primary'>
+          Listen
         </button>
-        <button title='stop' onClick={stop} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
-          <StopIcon />
+        <button title='stop' onClick={stop} className='btn relative mr-2 btn-primary'>
+          Stop
         </button>
         {sticky && (
           <button
