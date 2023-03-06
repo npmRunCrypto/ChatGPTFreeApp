@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import hljs from 'highlight.js';
 import DOMPurify from 'dompurify';
 import useStore from '@store/store';
+import { useSpeechRecognition } from "react-speech-kit";
 
 import CopyIcon from '@icon/CopyIcon';
 import EditIcon2 from '@icon/EditIcon2';
@@ -20,6 +21,8 @@ import useSubmit from '@hooks/useSubmit';
 import { ChatInterface } from '@type/chat';
 
 import PopupModal from '@components/PopupModal';
+import RecordIcon from '@icon/RecordIcon';
+import StopIcon from '@icon/StopIcon';
 
 const MessageContent = ({
   role,
@@ -366,6 +369,13 @@ const EditView = ({
     handleSubmit();
   };
 
+  const { listen, listening, stopListen } = useSpeechRecognition({
+    onResult: (result: string) => {
+      _setContent(result);
+    }
+  });
+
+
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
@@ -376,11 +386,10 @@ const EditView = ({
   return (
     <>
       <div
-        className={`w-full ${
-          sticky
+        className={`w-full ${sticky
             ? 'py-2 md:py-3 px-2 md:px-4 border border-black/10 bg-white dark:border-gray-900/50 dark:text-white dark:bg-gray-700 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]'
             : ''
-        }`}
+          }`}
       >
         <textarea
           ref={textareaRef}
@@ -395,6 +404,12 @@ const EditView = ({
         ></textarea>
       </div>
       <div className='text-center mt-2 flex justify-center'>
+        <button title='listen' onClick={listen} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
+          <RecordIcon />
+        </button>
+        <button title='stop' onClick={stopListen} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
+          <StopIcon />
+        </button>
         {sticky && (
           <button
             className='btn relative mr-2 btn-primary'
@@ -407,9 +422,8 @@ const EditView = ({
         )}
 
         <button
-          className={`btn relative mr-2 ${
-            sticky ? 'btn-neutral' : 'btn-primary'
-          }`}
+          className={`btn relative mr-2 ${sticky ? 'btn-neutral' : 'btn-primary'
+            }`}
           onClick={handleSave}
         >
           <div className='flex items-center justify-center gap-2'>Save</div>
