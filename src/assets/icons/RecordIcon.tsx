@@ -1,5 +1,5 @@
 
 const RecordIcon = () => (
-    <svg height="60" width="60" viewBox="0 0 24 24" fill="blue"><path d="M8 10v5a4 4 0 0 0 8 0v-5h2v5a6 6 0 0 1-12 0v-5H8zM12 2a4 4 0 0 1 4 4v5h-8V6a4 4 0 0 1 4-4z" /></svg>);
+    <svg width="50" height="50" id="mdi-volume-high" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>);
 
 export default RecordIcon;
