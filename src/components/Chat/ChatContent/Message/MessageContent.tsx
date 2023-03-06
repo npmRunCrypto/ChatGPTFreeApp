@@ -370,7 +370,7 @@ const EditView = ({
     handleSubmit();
   };
 
-  const { listen, listening, stopListen } = useSpeechRecognition({
+  const { listen, listening, stop } = useSpeechRecognition({
     onResult: (result: string) => {
       _setContent(result);
     }
@@ -408,7 +408,7 @@ const EditView = ({
         <button title='listen' onClick={listen} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
           <RecordIcon />
         </button>
-        <button title='stop' onClick={stopListen} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
+        <button title='stop' onClick={stop} h-12 px-4 py-2 bg-slate bg-op-15 hover:bg-op-20 text-slate rounded-sm>
           <StopIcon />
         </button>
         {sticky && (
