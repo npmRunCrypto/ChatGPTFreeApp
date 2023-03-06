@@ -203,7 +203,7 @@ const ContentView = React.memo(
 
               <EditButton setIsEdit={setIsEdit} />
               <DeleteButton setIsDelete={setIsDelete} />
-              <button onClick={()=> speak({ text: content })}>
+              <button onClick={()=> speak({ text: content, voice:'en-US'})}>
                 <RecordIcon/>
               </button>
             </>
