@@ -1,7 +1,6 @@
 
-const RecordIcon = () => (<svg viewBox="0 0 24 24" width="50" height="50">
-<path d="M12,0C8.686,0,6,2.686,6,6v6c0,3.314,2.686,6,6,6s6-2.686,6-6V6C18,2.686,15.314,0,12,0z M16,12c0,2.206-1.794,4-4,4s-4-1.794-4-4V6c0-2.206,1.794-4,4-4s4,1.794,4,4V12z"/>
-<path d="M12,18c-2.757,0-5-2.243-5-5V7c0-2.757,2.243-5,5-5s5,2.243,5,5v6C17,15.757,14.757,18,12,18z M12,9c-1.654,0-3,1.346-3,3v6h6v-6C15,10.346,13.654,9,12,9z"/>
+const RecordIcon = () => (<svg fill="#0077FF" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"></path>
 </svg>);
 
 export default RecordIcon;
